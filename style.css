@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg {
+  width: 32%;
+  height: 40%;
+
+  position: relative;
+  z-index: 1;
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(41, 45, 179);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.text {
+  position: absolute;
+  background-color: rgb(247, 247, 244);
+  width: 90%;
+  height: 80%;
+  bottom: 0%;
+  left: 5%;
+  border-radius: 30px;
+}
+
+.left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: rgb(9, 11, 54);
+  filter: drop-shadow(inset 30px 30px 20px red);
+}
+
+.right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: rgb(21, 26, 116);
+}
+
+.cover1 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(2, 2, 47);
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
+  position: absolute;
+}
+
+.msg:hover .text {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.1s;
+  transition-timing-function: linear;
+
+  opacity: 1;
+  transform: translateY(-65%);
+}
+
+.msg:hover .cover1 {
+  transition-property: all;
+  transition-duration: 0s;
+  transition-timing-function: linear;
+  transform-origin: top;
+  transform: rotateX(180deg);
+  z-index: -1;
+}
